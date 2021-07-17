@@ -13,8 +13,8 @@ function featv = beatpreproc0(ecgv);
 Fs = 360; % Sampling frequency
 T = 1/Fs; % Sampling period
 segmentLength = 128; % Length of a signal segment
-Length = 320;% Length of signal
-order = 28;
+Length=320;% Length of signal
+order = 4;
 
 % This iw what the book does:
 % Obtain the Covariance Spectrum of the Normal ECG signal using pcov.
@@ -26,7 +26,7 @@ order = 28;
 
 % HERE WE ARE DOING IT FOR JUST 1 BEAT (ecgv):
 % Obtain the Covariance Spectrum of the ECG beat with pcov.
-[Pxx,F] = pcov(rdc(ecgv),order,segmentLength,Fs);
-featv = transpose( Pxx(:) );
+[Pxx,F] = pcov((ecgv),order,segmentLength,Fs);
+featv = ecgv% transpose( Pxx(:) );
 
 end

@@ -14,8 +14,8 @@ function featv = bookpreproc(ecgv);
 Fs = 360; % Sampling frequency
 T = 1/Fs; % Sampling period
 segmentLength = 128; % Length of a signal segment
-Length=320;% Length of signal
-order = 14;
+Length = 320;% Length of signal
+order = 50;
 
 % This iw what the book does:
 % Obtain the Covariance Spectrum of the Normal ECG signal using pcov.
